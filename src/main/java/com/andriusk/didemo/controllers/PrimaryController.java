@@ -4,14 +4,15 @@ import com.andriusk.didemo.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class PrimaryController {
+public class PrimaryController implements MyController{
 
-    private GreetingService greetingService;
+    private final GreetingService greetingService;
 
     public PrimaryController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
+    @Override
     public String sayHello(){
         return greetingService.sayGreeting();
     }

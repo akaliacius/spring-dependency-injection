@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class SetterInjectedController {
+public class SetterInjectedController implements MyController {
 
     private GreetingService greetingService;
 
+    @Override
     public String sayHello(){
         return greetingService.sayGreeting();
     }
